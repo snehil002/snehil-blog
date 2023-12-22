@@ -1,7 +1,9 @@
 # Snehil's Little Tech Blog
 
 ## Exciting Features
-* Authentication - Login, Register
+* Authentication
+  * Login using Username and Password
+  * Google Authentication
 * CRUD - Create, View, Edit and Delete Articles
 
 ## How to Run this app?
@@ -15,13 +17,19 @@
   * [Linux](https://www.mongodb.com/docs/v4.4/administration/install-on-linux/)
 * Set SNEHIL_BLOG_PORT and SNEHIL_BLOG_MONGODB_URL env var written in .env file
   * Windows:
-    * SET SNEHIL_BLOG_PORT=<desired port number>
-    * SET SNEHIL_BLOG_MONGODB_URL=<url at which mongodb is running>
-    * SET SNEHIL_BLOG_LIVE_URL=<live url of project>
-      * Example: SET SNEHIL_BLOG_LIVE_URL=`http://localhost:4000`
+    * `SET SNEHIL_BLOG_PORT=<desired port number>`
+      * Example: `SET SNEHIL_BLOG_PORT=4000`
+    * `SET SNEHIL_BLOG_LIVE_URL=<live url of project with above port number (no trailing slash)>`
+      * Example: `SET SNEHIL_BLOG_LIVE_URL=http://localhost:4000`
+    * `SET SNEHIL_BLOG_MONGODB_URL=<url at which mongodb is running (no trailing slash)>`
+      * Example: `SET SNEHIL_BLOG_MONGODB_URL=mongodb://127.0.0.1:27017`
   * Linux:
-    * export SNEHIL_BLOG_PORT=production
-    * export SNEHIL_BLOG_MONGODB_URL=production
+    * `export SNEHIL_BLOG_PORT=<desired port number>`
+      * Example: `export SNEHIL_BLOG_PORT=4000`
+    * `export SNEHIL_BLOG_LIVE_URL=<live url of project with above port number (no trailing slash)>`
+      * Example: `export SNEHIL_BLOG_LIVE_URL=http://localhost:4000`
+    * `export SNEHIL_BLOG_MONGODB_URL=<url at which mongodb is running (no trailing slash)>`
+      * Example: `export SNEHIL_BLOG_MONGODB_URL=mongodb://127.0.0.1:27017`
 * `npm install`
 * `npm start`
 
