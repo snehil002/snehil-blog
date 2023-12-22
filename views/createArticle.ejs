@@ -1,0 +1,27 @@
+<%- include('partials/header') %>
+<%- include('partials/topbar', {username: username}) %>
+
+<div class="container">
+  <div class="jumbotron centered">
+    <!-- <i class="fas fa-key fa-6x"></i> -->
+    <h1 class="display-3">Write Your Article</h1>
+    <!-- <p class="secret-text">Don't keep your secrets, share them anonymously!</p> -->
+
+    <form action="/articles/new" method="POST">
+
+      <div class="form-group mb-2">
+        <input type="text" name="title" placeholder="Article Title"
+        class="form-control">
+      </div>
+      <div class="form-group mb-2">
+        <textarea name="content" placeholder="Article Content"
+        rows="6" class="form-control"></textarea>
+      </div>
+      <button type="submit" class="btn btn-dark">Submit</button>
+    
+    </form>
+
+
+  </div>
+</div>
+<%- include('partials/footer') %>

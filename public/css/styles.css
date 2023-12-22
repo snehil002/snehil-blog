@@ -1,0 +1,43 @@
+
+body {
+  background-color: #E8ECEF;
+}
+
+.centered {
+    /* padding-top: 200px; */
+    text-align: center;
+}
+
+.secret-text {
+  text-align: center;
+  font-size: 2rem;
+  color: #fff;
+  background-color: #000;
+}
+
+.article-content {
+  white-space: pre-line;
+}
+
+.delete-dialog-backdrop {
+  display: none;
+  position: absolute;
+  inset: 0 0 0 0;
+  backdrop-filter: blur(20px);
+}
+
+.delete-dialog {
+  width: 60%;
+  text-align: center;
+  padding: 3rem;
+  border: 1px solid;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+.center-horizontally {
+  display: flex;
+  justify-content: center;
+}

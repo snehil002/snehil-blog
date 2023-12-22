@@ -1,0 +1,15 @@
+<%- include('partials/header') %>
+<%- include('partials/topbar', {username: username}) %>
+
+<h1 class="centered">Snehil's Little Tech Blog</h1>
+
+<div class="centered">
+  Welcome 
+  <% if(username){  %>
+    <%= username %>
+  <%  } else { %>
+    Guest User!
+  <% } %>
+</div>
+
+<%- include('partials/footer') %>

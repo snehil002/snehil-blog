@@ -1,0 +1,82 @@
+<%- include('partials/header') %>
+<%- include('partials/topbar', {username: username}) %>
+
+<div class="container">
+  <div class="jumbotron centered">
+    <h1 class="display-3">Edit Your Article</h1>
+
+    <form id="editTitleForm" action="/articles/edit/<%= reqArticle.id %>" method="POST">
+
+      <div class="form-group">
+      
+        <input type="text" name="title" placeholder="Article Title"
+        class="form-control mb-2" value="<%= reqArticle.title %>" 
+        id="titleInput" />
+      
+        <!-- <button type="submit" class="btn btn-dark" id="editTitleButton">
+          Edit
+        </button> -->
+      
+      <!-- </div> -->
+
+    <!-- </form>
+
+    <form id="editContentForm" action="/articles/edit/<%= reqArticle.id %>" method="POST"> -->
+      
+      <!-- <div class="form-group mb-2"> -->
+      
+        <textarea name="content" placeholder="Article Content"
+        rows="10" class="form-control mb-2" id="contentTextArea"
+        ><%= reqArticle.content %></textarea>
+      
+        <button type="submit" class="btn btn-dark" id="editContentButton">
+          Save
+        </button>
+      
+      </div>
+
+    </form>
+    
+    <!-- <script>
+      const titleInput = document.getElementById("titleInput"),
+      contentTextArea = document.getElementById("contentTextArea"),
+      editTitleButton = document.getElementById("editTitleButton"),
+      editContentButton = document.getElementById("editContentButton"),
+      editTitleForm = document.getElementById("editTitleForm"),
+      editContentForm = document.getElementById("editContentForm")
+      
+      const handleFormSubmit = async (e) => {
+        e.preventDefault()
+        console.log("Submitted")
+        const editXFormData = new FormData(e.target)
+        const formBody = {}
+        for (const [k, v] of editXFormData) {
+          formBody[k] = v
+        }
+        console.log(formBody)
+        
+        const url = "/articles/edit/<%= reqArticle.id %>"
+        const res = await fetch(url, {
+          method: "PATCH",
+          body: JSON.stringify(formBody),
+          headers: {
+            "Content-Type": "application/json"
+          },
+          redirect: "follow"
+        })
+        const resj = await res.json()
+        console.log(resj)
+        if (e.target.id == "editTitleForm")
+          titleInput.value = resj // "Ha ha hi hi!"
+        else if (e.target.id == "editContentForm")
+          contentTextArea.value = resj // "Hu hu ho ho!"
+      }
+
+      editTitleForm.onsubmit = handleFormSubmit
+      editContentForm.onsubmit = handleFormSubmit
+
+    </script> -->
+
+  </div>
+</div>
+<%- include('partials/footer') %>

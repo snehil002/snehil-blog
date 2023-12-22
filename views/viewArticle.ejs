@@ -1,0 +1,57 @@
+<%- include('partials/header') %>
+<%- include('partials/topbar', {username: username}) %>
+
+<div class="container">
+  <div class="jumbotron" style="min-height: 90vh;">
+    <% if (canEditOrDelete) { %>
+    <div>
+    
+      <form action="/articles/edit/<%= reqArticle.id %>" method="GET" style="display: inline;">
+        <button class="btn btn-primary">
+          Edit Article
+        </button>
+      </form>
+      <button onclick="openDeleteDialog()" class="btn btn-dark">
+        Delete Article
+      </button>
+      
+      <div class="delete-dialog-backdrop">
+        <div class="delete-dialog">
+          <div class="mb-2">Are you sure you want to delete this article?</div>
+          <div class="center-horizontally">
+            <form action="/articles/delete/<%= reqArticle.id %>" method="POST">
+              <button class="btn btn-primary" type="submit">
+                Delete
+              </button>
+            </form>
+            <button class="btn btn-secondary" onclick="closeDeleteDialog()">
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+    <% } %>
+
+    <h1 class="display-3"><%= reqArticle.title %></h1>
+    
+    <div class="article-content">
+      <%= reqArticle.content %>
+    </div>
+
+    <script>
+      function openDeleteDialog(e) {
+        const deleteDialog = document.querySelector(".delete-dialog-backdrop")
+        deleteDialog.style.display = "block"
+      }
+      function closeDeleteDialog(e) {
+        const deleteDialog = document.querySelector(".delete-dialog-backdrop")
+        deleteDialog.style.display = "none"
+      }
+    </script>
+    
+  </div>
+</div>
+
+<%- include('partials/footer') %>

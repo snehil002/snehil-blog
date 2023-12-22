@@ -1,0 +1,23 @@
+<%- include('partials/header') %>
+<%- include('partials/topbar', {username: username}) %>
+
+<div class="jumbotron text-center">
+  <div class="container">
+    <% if (showAllArticles) { %>
+      <h1 class="">Articles Hub</h1>
+    <% } else { %>
+      <h1 class="">Articles of <%= username %></h1>
+    <% } %>
+
+    <%   allArticles.forEach(article => {   %>
+          <div style="border: 2px solid; margin-bottom: 1rem;">
+            <a href="/articles/view/<%= article.id %>"><h3><%= article.title %></h3></a>
+            <div><%= article.username %></div>
+            <div><%= (new Date(article.dateAuthored)).toLocaleString("en-IN", {timezone: "Asia/Calcutta", year: "numeric", month: "short", day: "numeric"}) %></div>
+          </div>
+    <%   });   %>
+
+  </div>
+</div>
+
+<%- include('partials/footer') %>

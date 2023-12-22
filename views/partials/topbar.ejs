@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+
+    <a class="navbar-brand" href="/">Snehil's Blog</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/articles">Articles Hub</a>
+        </li>
+      </ul>
+
+      <div>
+        <%  if(username){                                                      %>
+            <span><%= username %></span>
+            <a role="button" class="btn btn-outline-success" href="/articles/new">
+              Write
+            </a>
+            <a role="button" class="btn btn-outline-success" href="/articles/myarticles">
+              My Articles
+            </a>
+            <a role="button" class="btn btn-outline-success" href="/logout">
+              Logout
+            </a>
+        <%  } else {                                                          %>
+            <a role="button" class="btn btn-outline-success" href="/login">
+              Login
+            </a>
+            <a role="button" class="btn btn-outline-success" href="/register">
+              Register
+            </a>
+        <%  }                                                                 %>
+      </div>
+
+    </div>
+
+  </div>
+</nav>
