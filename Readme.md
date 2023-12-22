@@ -15,7 +15,7 @@
       * `net stop MongoDB`
     * Or, Open Task Manager > Services > MongoDB > Right Click > Start
   * [Linux](https://www.mongodb.com/docs/v4.4/administration/install-on-linux/)
-* Set SNEHIL_BLOG_PORT and SNEHIL_BLOG_MONGODB_URL env var written in .env file
+* Set the following environment variables:
   * Windows:
     * `SET SNEHIL_BLOG_PORT=<desired port number>`
       * Example: `SET SNEHIL_BLOG_PORT=4000`
